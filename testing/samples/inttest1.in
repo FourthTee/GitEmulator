@@ -1,0 +1,38 @@
+I prelude1.inc
++ test1.txt hello.txt
+> add test1.txt
+<<<
+> commit hello
+<<<
++ test1.txt nothello.txt
++ test2.txt world.txt
+> checkout master
+There is an untracked file in the way; delete it or add it first.
+<<<
+= test2.txt world.txt
+= test1.txt nothello.txt
+- test2.txt
+> checkout master
+No need to checkout the current branch.
+<<<
+> checkout -- test1.txt
+<<<
+* test2.txt
+= test1.txt hello.txt
+> log
+===
+${COMMIT_HEAD}
+hello
+
+===
+${COMMIT_HEAD}
+initial commit
+
+<<<*
+# Commit id of initial commit
+D UID1 "${2}"
+# Commit id of hello commit
+D UID2 "${1}"
+> find "initial commit"
+${UID1}
+<<<*

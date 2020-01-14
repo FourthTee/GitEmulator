@@ -1,0 +1,60 @@
+I prelude1.inc
++ test1.txt hello.txt
++ test2.txt world.txt
+> add test1.txt
+<<<
+> add test2.txt
+<<<
+> commit "First commit"
+<<<
++ test1.txt nothello.txt
++ test2.txt notworld.txt
+> add test1.txt
+<<<
+> add test2.txt
+<<<
+> commit "Second commit"
+<<<
+> log
+===
+${COMMIT_HEAD}
+Second commit
+
+===
+${COMMIT_HEAD}
+First commit
+
+===
+${COMMIT_HEAD}
+initial commit
+
+<<<*
+# Commit id of initial commit
+D UID1 "${3}"
+# Commit id of first commit
+D UID2 "${2}"
+# Commit id of second commit
+D UID3 "${1}"
+> checkout ${UID2} -- test1.txt
+<<<*
+D HEADER "commit [a-f0-9]+"
+D DATE "Date: \w\w\w \w\w\w \d+ \d\d:\d\d:\d\d \d\d\d\d [-+]\d\d\d\d"
+> log
+===
+${HEADER}
+${DATE}
+Second commit
+
+===
+${HEADER}
+${DATE}
+First commit
+
+===
+${HEADER}
+${DATE}
+initial commit
+
+<<<*
+= test1.txt hello.txt
+= test2.txt notworld.txt

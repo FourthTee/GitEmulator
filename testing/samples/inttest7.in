@@ -1,0 +1,36 @@
+I prelude1.inc
++ test1.txt hello.txt
++ test2.txt world.txt
+> add test1.txt
+<<<
+> add test2.txt
+<<<
+> commit "First commit"
+<<<
++ test1.txt nothello.txt
++ test2.txt notworld.txt
+> add test1.txt
+<<<
+> add test2.txt
+<<<
+> commit "Second commit"
+<<<
+D HEADER "commit [a-f0-9]+"
+D DATE "Date: \w\w\w \w\w\w \d+ \d\d:\d\d:\d\d \d\d\d\d [-+]\d\d\d\d"
+> log
+===
+${HEADER}
+${DATE}
+Second commit
+
+===
+${HEADER}
+${DATE}
+First commit
+
+===
+${HEADER}
+${DATE}
+initial commit
+
+<<<*

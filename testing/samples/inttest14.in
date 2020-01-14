@@ -1,0 +1,34 @@
+I prelude1.inc
++ test1.txt hello.txt
++ test2.txt world.txt
+> add test1.txt
+<<<
+> add test2.txt
+<<<
+> commit "First commit"
+<<<
++ test1.txt nothello.txt
++ test2.txt notworld.txt
+> add test1.txt
+<<<
+> add test2.txt
+<<<
+> commit "Second commit"
+<<<
+> log
+${COMMIT_LOG}
+${COMMIT_LOG}
+${COMMIT_LOG}
+<<<*
+D L1 "${1}"
+D L2 "${2}"
+D L3 "${3}"
+> global-log
+${ARBLINES}${L1}?${ARBLINES}
+<<<*
+> global-log
+${ARBLINES}${L2}?${ARBLINES}
+<<<*
+> global-log
+${ARBLINES}${L3}?${ARBLINES}
+<<<*

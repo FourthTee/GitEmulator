@@ -1,0 +1,71 @@
+I prelude1.inc
++ test1.txt hello.txt
+> add test1.txt
+<<<
+> status
+=== Branches ===
+*master
+
+=== Staged Files ===
+test1.txt
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<
+> commit hello
+<<<
++ test2.txt world.txt
+> status
+=== Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+test2.txt
+
+<<<
+> add test2.txt
+<<<
+> status
+=== Branches ===
+*master
+
+=== Staged Files ===
+test2.txt
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<
+> add test2.txt
+<<<
+= test2.txt world.txt
++ test2.txt notworld.txt
+> add test2.txt
+<<<
+> status
+=== Branches ===
+*master
+
+=== Staged Files ===
+test2.txt
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<

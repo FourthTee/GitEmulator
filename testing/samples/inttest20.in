@@ -1,0 +1,88 @@
+I prelude1.inc
++ test1.txt hello.txt
++ test2.txt world.txt
+> add test1.txt
+<<<
+> add test2.txt
+<<<
+> commit "First commit"
+<<<
+> branch b
+<<<
+> checkout b
+<<<
+= test1.txt hello.txt
+= test2.txt world.txt
++ test1.txt nothello.txt
+> add test1.txt
+<<<
+> commit "third commit"
+<<<
+> branch c
+<<<
+> checkout c
+<<<
++ test2.txt notworld.txt
+> add test2.txt
+<<<
+> commit "fourth commit"
+<<<
+> checkout master
+<<<
+> status
+=== Branches ===
+b
+c
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<
+> merge c
+Current branch fast-forwarded.
+<<<
+> status
+=== Branches ===
+b
+c
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<
+D HEADER "commit [a-f0-9]+"
+D DATE "Date: \w\w\w \w\w\w \d+ \d\d:\d\d:\d\d \d\d\d\d [-+]\d\d\d\d"
+> log
+===
+${HEADER}
+${DATE}
+fourth commit
+
+===
+${HEADER}
+${DATE}
+third commit
+
+===
+${HEADER}
+${DATE}
+First commit
+
+===
+${HEADER}
+${DATE}
+initial commit
+
+<<<*

@@ -1,0 +1,78 @@
+I prelude1.inc
++ test1.txt hello.txt
++ test2.txt world.txt
+> add test1.txt
+<<<
+> add test2.txt
+<<<
+> commit "First commit"
+<<<
+> branch b
+<<<
+> checkout master
+No need to checkout the current branch.
+<<<
+> checkout b
+<<<
+= test1.txt hello.txt
+= test2.txt world.txt
++ test1.txt nothello.txt
+> status
+=== Branches ===
+*b
+master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+test1.txt (modified)
+
+=== Untracked Files ===
+
+<<<
+> add test1.txt
+<<<
+> commit "second commit b"
+<<<
+= test1.txt nothello.txt
+E test2.txt
+> checkout master
+<<<
+= test1.txt hello.txt
+= test2.txt world.txt
+- test2.txt
+> status
+=== Branches ===
+b
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+test2.txt (deleted)
+
+=== Untracked Files ===
+
+<<<
++ test2.txt world.txt
+> status
+=== Branches ===
+b
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<
+> merge b
+Current branch fast-forwarded.
+<<<

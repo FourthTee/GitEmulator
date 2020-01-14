@@ -1,0 +1,24 @@
+Design Document for Gitlet project
+By Fourth Teerakapial aql
+
+
+*** Class Layout ***
+- Commit Class: Commit class it for constructing the commit object used to store in a sequence. We can retrieve information about commit through serialising and reading back.
+
+- Repo Class: Repo class is the representation of the repo with attributes relating to the repository at the moment. This is heavily used in conjunction with the command class. We read back information about the repo every time we start the command and serialise and the end of every command.
+
+- Blob Class: Blob class is used for object representation of the file. A Blob class has all the information a file has.
+
+- Report Error class: This class is only used for reporting errors that occur when users use gimlet. Messages are printed out and then system exits.
+
+- Main Class: The Main class class is used to take in the input from the user and passed onto the command class
+
+- Command Class: The command class is used to process every command, categorise it, and perform the necessary actions. This class has a lot of methods to execute the functions required by gitlet. 
+
+*** Overall Structure ***
+
+Main --> Command --> Repo --> Commit --> Blob and Report error is separate from everyone
+
+
+
+

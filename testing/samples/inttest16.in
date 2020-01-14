@@ -1,0 +1,36 @@
+I prelude1.inc
++ test1.txt hello.txt
++ test2.txt world.txt
+> add test1.txt
+<<<
+> add test2.txt
+<<<
+> commit "First commit"
+<<<
+> branch b
+<<<
+> checkout b
+<<<
+= test1.txt hello.txt
+= test2.txt world.txt
+> rm test1.txt
+<<<
+* test1.txt
+E test2.txt
++ test1.txt hello.txt
+> add test1.txt
+<<<
+> status
+=== Branches ===
+*b
+master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<

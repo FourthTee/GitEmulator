@@ -1,0 +1,45 @@
+I prelude1.inc
++ test1.txt nothello.txt
++ test2.txt notworld.txt
+> add test1.txt
+<<<
+> add test2.txt
+<<<
+> commit "First commit"
+<<<
+> branch b
+<<<
++ test1.txt hello.txt
++ test2.txt world.txt
+> add test1.txt
+<<<
+> add test2.txt
+<<<
+> commit "Second commit"
+<<<
+> checkout b
+<<<
++ test1.txt hello.txt
+= test2.txt notworld.txt
+> status
+=== Branches ===
+*b
+master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+test1.txt (modified)
+
+=== Untracked Files ===
+
+<<<
+> add test1.txt
+<<<
+> commit "third commit"
+<<<
+> merge master
+Encountered a merge conflict.
+<<<

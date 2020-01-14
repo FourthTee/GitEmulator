@@ -1,0 +1,86 @@
+I prelude1.inc
++ test1.txt hello.txt
++ test2.txt world.txt
+> add test1.txt
+<<<
+> add test2.txt
+<<<
+> commit "First commit"
+<<<
+> branch b
+<<<
+> checkout master
+No need to checkout the current branch.
+<<<
+> checkout b
+<<<
+= test1.txt hello.txt
+= test2.txt world.txt
++ test1.txt nothello.txt
+> status
+=== Branches ===
+*b
+master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+test1.txt (modified)
+
+=== Untracked Files ===
+
+<<<
+> add test1.txt
+<<<
+> commit "second commit b"
+<<<
+= test1.txt nothello.txt
+E test2.txt
+> checkout master
+<<<
+D HEADER "commit [a-f0-9]+"
+D DATE "Date: \w\w\w \w\w\w \d+ \d\d:\d\d:\d\d \d\d\d\d [-+]\d\d\d\d"
+> log
+===
+${HEADER}
+${DATE}
+First commit
+
+===
+${HEADER}
+${DATE}
+initial commit
+
+<<<*
+= test1.txt hello.txt
+= test2.txt world.txt
+> checkout b
+<<<
+D HEADER "commit [a-f0-9]+"
+D DATE "Date: \w\w\w \w\w\w \d+ \d\d:\d\d:\d\d \d\d\d\d [-+]\d\d\d\d"
+> log
+===
+${HEADER}
+${DATE}
+second commit b
+
+===
+${HEADER}
+${DATE}
+First commit
+
+===
+${HEADER}
+${DATE}
+initial commit
+
+<<<*
+= test2.txt world.txt
+= test1.txt nothello.txt
+> merge master
+Given branch is an ancestor of the current branch.
+<<<
+= test2.txt world.txt
+= test1.txt nothello.txt

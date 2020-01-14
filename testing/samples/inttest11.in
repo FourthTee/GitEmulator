@@ -1,0 +1,28 @@
+I prelude1.inc
++ test1.txt hello.txt
++ test2.txt world.txt
+> add test1.txt
+<<<
+> add test2.txt
+<<<
+> commit "First commit"
+<<<
+> branch b
+<<<
+> checkout b
+<<<
+= test1.txt hello.txt
+= test2.txt world.txt
++ test1.txt nothello.txt
+> add test1.txt
+<<<
+> commit "second commit b"
+<<<
+> checkout master
+<<<
+> rm-branch master
+Cannot remove the current branch.
+<<<
+> rm-branch hee
+A branch with that name does not exist.
+<<<
